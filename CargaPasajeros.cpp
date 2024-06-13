@@ -5,6 +5,7 @@
 #include "CargaPasajeros.h"
 #include <fstream>
 #include <iostream>
+#include "ColaPas.h"
 
 using nlohmann::json;
 
@@ -25,6 +26,7 @@ void CargaPasajeros::cargarDesdeArchivo(std::string nombre_archivo) {
 
     json j;
     archivo >> j;
+    Cola colapas;
 
     for (const auto& item : j) {
         Pasajero pasajero;
@@ -37,8 +39,13 @@ void CargaPasajeros::cargarDesdeArchivo(std::string nombre_archivo) {
         pasajero.origen = item["origen"];
         pasajero.equipaje_facturado = item["equipaje_facturado"];
 
+        colapas.enqueue(pasajero);
+        colapas.visualizarPasajero(pasajero);
+        std::cout << "Pasajero ingresado a la cola" << std::endl;
         addPasajero(pasajero);
     }
+    std::cout << " " << std::endl;
+    std::cout << "*********************************" << std::endl;
 }
 
 void CargaPasajeros::OpcionesPasajeros() {
@@ -51,7 +58,8 @@ void CargaPasajeros::OpcionesPasajeros() {
 
     for (size_t i = 0; i < instancia.pasajeros.get_size(); i++) {
         Pasajero& pasajero = instancia.pasajeros[i];
-        std::cout << "--------------------------------" << std::endl;
+        std::cout << " " << std::endl;
+        std::cout << "------Pasajeros registrados------" << std::endl;
         std::cout << "nombre: " << pasajero.nombre << std::endl;
         std::cout << "nacionalidad: " << pasajero.nacionalidad << std::endl;
         std::cout << "Num. de pasaporte: " << pasajero.numero_de_pasaporte << std::endl;

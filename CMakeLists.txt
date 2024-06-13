@@ -21,5 +21,7 @@ add_executable(202109705_EDD_Practica main.cpp
         nodoAv.h
         CircularDobleDis.h
         CircularDobleMan.h
+        nodoPas.h
+        ColaPas.h
 )
 target_link_libraries(202109705_EDD_Practica PRIVATE nlohmann_json::nlohmann_json)
