@@ -25,25 +25,25 @@ int main() {
         switch (opcion){
             case 1:
                 opcion1();
-                break;
+            break;
             case 2:
                 cout << "Opcion 2" << endl;
-                break;
+            break;
             case 3:
                 cout << "Opcion 3" << endl;
-                break;
+            break;
             case 4:
                 cout << "Opcion 4" << endl;
-                break;
+            break;
             case 5:
                 cout << "Opcion 5" << endl;
-                break;
+            break;
             case 6:
                 salir = true;
-                break;
+            break;
             default:
                 cout << "Opcion no valida" << endl;
-                break;
+            break;
         }
 
         if(!salir){
