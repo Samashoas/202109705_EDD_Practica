@@ -57,6 +57,7 @@ void CargaAviones::cargarDesdeArchivo(std::string nombre_archivo) {
 
     std::cout << "\nLista de aviones disponibles:\n";
     ListaAD.visualizarLista();
+    ListaAD.generarReporte();
     std::cout << "\nLista de aviones en mantenimiento:\n";
     ListaAM.visualizarLista();
 }

@@ -150,7 +150,7 @@ void ListaCircularDis::generarReporte(){
     else
     {
         std::ofstream archivo;
-        archivo.open("grafica_LC.dot", std::ios::out);
+        archivo.open("grafica_LC_Disponible.dot", std::ios::out);
         archivo << "digraph G { rankdir = LR; " << std::endl;
 
         Avion nodoDato;
@@ -170,8 +170,8 @@ void ListaCircularDis::generarReporte(){
 
         archivo << "; }";
         archivo.close();
-        system("dot -Tpng grafica_LC.dot -o grafica_LC.png");
-        system("start grafica_LC.png");
+        system("dot -Tpng grafica_LC_Disponible.dot -o grafica_LC_Disponible.png");
+        system("start grafica_LC_Disponible.png");
     }
 }
 
