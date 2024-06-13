@@ -44,6 +44,7 @@ void CargaPasajeros::cargarDesdeArchivo(std::string nombre_archivo) {
         std::cout << "Pasajero ingresado a la cola" << std::endl;
         addPasajero(pasajero);
     }
+    colapas.reporte();
     std::cout << " " << std::endl;
     std::cout << "*********************************" << std::endl;
 }

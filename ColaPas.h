@@ -60,6 +60,36 @@ public:
         std::cout << "--------------------------------" << std::endl;
     }
 
+    void reporte() {
+        std::ofstream file("ColaPasajeros.dot");
+        if (!file.is_open()) {
+            std::cout << "No se pudo abrir el archivo de reporte" << std::endl;
+            return;
+        }
+
+        file << "digraph G {\n";
+        file << "rankdir=LR;\n";
+        file << "node [shape = record];\n";
+
+        NodoPas* temp = frente;
+        int i = 0;
+        while (temp != nullptr) {
+            file << "node" << i << " [label = \"{<data> " << temp->dato.nombre << " | <next> }\"];\n";
+            if (temp->siguiente != nullptr) {
+                file << "\"node" << i << "\":next -> \"node" << i+1 << "\":data;\n";
+            }
+            temp = temp->siguiente;
+            i++;
+        }
+
+        file << "}";
+        file.close();
+
+        // Call Graphviz to generate the image
+        system("dot -Tpng ColaPasajeros.dot -o ColaPasajeros.png");
+        system("start ColaPasajeros.png");
+    }
+
     bool estaVacia() {
         return frente == nullptr;
     }
