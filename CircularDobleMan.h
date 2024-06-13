@@ -2,17 +2,17 @@
 // Created by jpsam on 13/06/2024.
 //
 
-#ifndef CIRCULARDOBLEDIS_H
-#define CIRCULARDOBLEDIS_H
+#ifndef CIRCULARDOBLEMAN_H
+#define CIRCULARDOBLEMAN_H
 #include "nodoAv.h"
 
-class ListaCircularDis
+class ListaCircularMan
 {
 private:
     Nodo* primero;
     Nodo* ultimo;
 public:
-    ListaCircularDis();
+    ListaCircularMan();
     bool estaVacia();
     void insertarInicio(Avion dato);
     void insertarFinal(Avion dato);
@@ -20,21 +20,21 @@ public:
     void eliminarFinal();
     void visualizarLista();
     void generarReporte();
-    ~ListaCircularDis();
+    ~ListaCircularMan();
 };
 
-ListaCircularDis::ListaCircularDis()
+ListaCircularMan::ListaCircularMan()
 {
     primero = nullptr;
     ultimo = nullptr;
 }
 
-bool ListaCircularDis::estaVacia()
+bool ListaCircularMan::estaVacia()
 {
     return (primero == nullptr) && (ultimo == nullptr);
 }
 
-void ListaCircularDis::insertarInicio(Avion dato)
+void ListaCircularMan::insertarInicio(Avion dato)
 {
     Nodo *nuevo = new Nodo(dato);
     if (estaVacia())
@@ -53,7 +53,7 @@ void ListaCircularDis::insertarInicio(Avion dato)
     }
 }
 
-void ListaCircularDis::insertarFinal(Avion dato)
+void ListaCircularMan::insertarFinal(Avion dato)
 {
     Nodo *nuevo = new Nodo(dato);
     if (estaVacia())
@@ -72,7 +72,7 @@ void ListaCircularDis::insertarFinal(Avion dato)
     }
 }
 
-void ListaCircularDis::eliminarInicio()
+void ListaCircularMan::eliminarInicio()
 {
     if (estaVacia())
     {
@@ -96,7 +96,7 @@ void ListaCircularDis::eliminarInicio()
     }
 }
 
-void ListaCircularDis::eliminarFinal()
+void ListaCircularMan::eliminarFinal()
 {
     if (estaVacia())
     {
@@ -124,7 +124,7 @@ void ListaCircularDis::eliminarFinal()
     }
 }
 
-void ListaCircularDis::visualizarLista()
+void ListaCircularMan::visualizarLista()
 {
     if (estaVacia())
     {
@@ -143,7 +143,7 @@ void ListaCircularDis::visualizarLista()
     }
 }
 
-void ListaCircularDis::generarReporte(){
+void ListaCircularMan::generarReporte(){
     if (estaVacia()){
         std::cout << "La lista está vacía\n" << std::endl;
     }
@@ -175,11 +175,11 @@ void ListaCircularDis::generarReporte(){
     }
 }
 
-ListaCircularDis::~ListaCircularDis()
+ListaCircularMan::~ListaCircularMan()
 {
     while (!estaVacia()) {
         eliminarInicio();
     }
 }
 
-#endif //CIRCULARDOBLEDIS_H
+#endif //CIRCULARDOBLEMAN_H

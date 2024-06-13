@@ -1,6 +1,8 @@
 #include "CargaAviones.h"
 #include <fstream>
 #include <iostream>
+#include "CircularDobleDis.h"
+#include "CircularDobleMan.h"
 
 using nlohmann::json;
 
@@ -22,6 +24,9 @@ void CargaAviones::cargarDesdeArchivo(std::string nombre_archivo) {
     json j;
     archivo >> j;
 
+    ListaCircularDis ListaAD;
+    ListaCircularMan ListaAM;
+
     for (const auto& item : j) {
         Avion avion;
         avion.vuelo = item["vuelo"];
@@ -34,8 +39,26 @@ void CargaAviones::cargarDesdeArchivo(std::string nombre_archivo) {
         avion.aerolinea = item["aerolinea"];
         avion.estado = item["estado"];
 
+        if(avion.estado == "Disponible") {
+            ListaAD.insertarFinal(avion);
+            std::cout << " " << std::endl;
+            std::cout << "Avion disponible insertado" << std::endl;
+        }else if(avion.estado == "Mantenimiento") {
+            ListaAM.insertarFinal(avion);
+            std::cout << " " << std::endl;
+            std::cout << "Avion en mantenimiento insertado" << std::endl;
+            std::cout << " " << std::endl;
+        }else {
+            std::cout << "El estado no es valido" << std::endl;
+        }
+
         addAvion(avion);
     }
+
+    std::cout << "\nLista de aviones disponibles:\n";
+    ListaAD.visualizarLista();
+    std::cout << "\nLista de aviones en mantenimiento:\n";
+    ListaAM.visualizarLista();
 }
 
 void CargaAviones::OpcionesAviones() {
