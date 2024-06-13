@@ -69,14 +69,23 @@ public:
 
         file << "digraph G {\n";
         file << "rankdir=LR;\n";
-        file << "node [shape = record];\n";
+        file << "node [shape = none];\n";
 
         NodoPas* temp = frente;
         int i = 0;
         while (temp != nullptr) {
-            file << "node" << i << " [label = \"{<data> " << temp->dato.nombre << " | <next> }\"];\n";
+            file << "node" << i << " [label = <<table border=\"0\" cellborder=\"1\" cellspacing=\"0\">\n";
+            file << "<tr><td>Nombre:</td><td>" << temp->dato.nombre << "</td></tr>\n";
+            file << "<tr><td>Nacionalidad:</td><td>" << temp->dato.nacionalidad << "</td></tr>\n";
+            file << "<tr><td>Num. de pasaporte:</td><td>" << temp->dato.numero_de_pasaporte << "</td></tr>\n";
+            file << "<tr><td>Vuelo:</td><td>" << temp->dato.vuelo << "</td></tr>\n";
+            file << "<tr><td>Asiento:</td><td>" << temp->dato.asiento << "</td></tr>\n";
+            file << "<tr><td>Destino:</td><td>" << temp->dato.destino << "</td></tr>\n";
+            file << "<tr><td>Origen:</td><td>" << temp->dato.origen << "</td></tr>\n";
+            file << "<tr><td>Equipaje Fac.:</td><td>" << temp->dato.equipaje_facturado << "</td></tr>\n";
+            file << "</table>>];\n";
             if (temp->siguiente != nullptr) {
-                file << "\"node" << i << "\":next -> \"node" << i+1 << "\":data;\n";
+                file << "\"node" << i+1 << "\" -> \"node" << i << "\";\n";
             }
             temp = temp->siguiente;
             i++;
