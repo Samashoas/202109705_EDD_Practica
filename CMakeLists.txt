@@ -11,5 +11,8 @@ fetchcontent_declare(
 )
 fetchcontent_makeavailable(json)
 
-add_executable(202109705_EDD_Practica main.cpp)
+add_executable(202109705_EDD_Practica main.cpp
+        CargaAviones.cpp
+        CargaAviones.h
+)
 target_link_libraries(202109705_EDD_Practica PRIVATE nlohmann_json::nlohmann_json)

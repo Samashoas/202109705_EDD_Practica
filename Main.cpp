@@ -1,9 +1,10 @@
 #include <iostream>
+#include "CargaAviones.h"
 using  namespace std;
 
 
 void opcion1() {
-    cout << "Opcion 1" << endl;
+    CargaAviones::OpcionesAviones();
 }
 
 int main() {
@@ -39,6 +40,7 @@ int main() {
                 cout << "Opcion 5" << endl;
             break;
             case 6:
+                cout << "Adios!" << endl;
                 salir = true;
             break;
             default:
