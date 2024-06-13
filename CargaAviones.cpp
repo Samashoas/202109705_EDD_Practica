@@ -48,17 +48,33 @@ void CargaAviones::OpcionesAviones() {
 
     for (size_t i = 0; i < instancia.aviones.get_size(); i++) {
         Avion& avion = instancia.aviones[i];
-        std::cout << "--------------------------------" << std::endl;
-        std::cout << "Vuelo: " << avion.vuelo << std::endl;
-        std::cout << "Numero de registro: " << avion.numero_de_registro << std::endl;
-        std::cout << "Modelo: " << avion.modelo << std::endl;
-        std::cout << "Fabricante: " << avion.fabricante << std::endl;
-        std::cout << "Ano de fabricacion: " << avion.ano_fabricacion << std::endl;
-        std::cout << "Capacidad: " << avion.capacidad << std::endl;
-        std::cout << "Peso maximo de despegue: " << avion.peso_max_despegue << std::endl;
-        std::cout << "Aerolinea: " << avion.aerolinea << std::endl;
-        std::cout << "Estado: " << avion.estado << std::endl;
-        std::cout << "--------------------------------" << std::endl;
+        if(avion.estado == "Disponible") {
+            std::cout << "-------Aviones Disponibles-------" << std::endl;
+            std::cout << "Vuelo: " << avion.vuelo << std::endl;
+            std::cout << "Numero de registro: " << avion.numero_de_registro << std::endl;
+            std::cout << "Modelo: " << avion.modelo << std::endl;
+            std::cout << "Fabricante: " << avion.fabricante << std::endl;
+            std::cout << "Ano de fabricacion: " << avion.ano_fabricacion << std::endl;
+            std::cout << "Capacidad: " << avion.capacidad << std::endl;
+            std::cout << "Peso maximo de despegue: " << avion.peso_max_despegue << std::endl;
+            std::cout << "Aerolinea: " << avion.aerolinea << std::endl;
+            std::cout << "Estado: " << avion.estado << std::endl;
+            std::cout << "---------------------------------" << std::endl;
+        }else if(avion.estado == "Mantenimiento") {
+            std::cout << "----Aviones en Mantenimiento----" << std::endl;
+            std::cout << "Vuelo: " << avion.vuelo << std::endl;
+            std::cout << "Numero de registro: " << avion.numero_de_registro << std::endl;
+            std::cout << "Modelo: " << avion.modelo << std::endl;
+            std::cout << "Fabricante: " << avion.fabricante << std::endl;
+            std::cout << "Ano de fabricacion: " << avion.ano_fabricacion << std::endl;
+            std::cout << "Capacidad: " << avion.capacidad << std::endl;
+            std::cout << "Peso maximo de despegue: " << avion.peso_max_despegue << std::endl;
+            std::cout << "Aerolinea: " << avion.aerolinea << std::endl;
+            std::cout << "Estado: " << avion.estado << std::endl;
+            std::cout << "---------------------------------" << std::endl;
+        }else {
+            std::cout << "Estado no valido" << std::endl;
+        }
     }
 }
 
