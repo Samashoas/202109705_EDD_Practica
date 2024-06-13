@@ -14,5 +14,9 @@ fetchcontent_makeavailable(json)
 add_executable(202109705_EDD_Practica main.cpp
         CargaAviones.cpp
         CargaAviones.h
+        MiVector.h
+        MyArrasy.h
+        CargaPasajeros.cpp
+        CargaPasajeros.h
 )
 target_link_libraries(202109705_EDD_Practica PRIVATE nlohmann_json::nlohmann_json)

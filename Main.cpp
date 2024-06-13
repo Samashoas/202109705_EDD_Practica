@@ -7,6 +7,10 @@ void opcion1() {
     CargaAviones::OpcionesAviones();
 }
 
+void opcion2() {
+    cout << "Opcion 2" << endl;
+}
+
 int main() {
     int opcion;
     bool salir = false;
@@ -28,7 +32,7 @@ int main() {
                 opcion1();
             break;
             case 2:
-                cout << "Opcion 2" << endl;
+                opcion2();
             break;
             case 3:
                 cout << "Opcion 3" << endl;

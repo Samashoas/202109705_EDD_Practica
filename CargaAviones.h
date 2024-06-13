@@ -6,8 +6,8 @@
 #define CARGAAVIONES_H
 
 #include <string>
-#include <vector>
 #include <nlohmann/json.hpp>
+#include "MiVector.h"
 
 struct Avion {
     std::string vuelo;
@@ -23,8 +23,14 @@ struct Avion {
 
 class CargaAviones {
 public:
-    static std::vector<Avion> cargarDesdeArchivo(std::string nombre_archivo);
+    CargaAviones();
+    ~CargaAviones();
+    void cargarDesdeArchivo(std::string nombre_archivo);
     static void OpcionesAviones();
+    void addAvion(const Avion& avion);
+
+private:
+    MiVector<Avion> aviones;
 };
 
 #endif //CARGAAVIONES_H
