@@ -151,24 +151,31 @@ void ListaCircularDis::generarReporte(){
     {
         std::ofstream archivo;
         archivo.open("grafica_LC_Disponible.dot", std::ios::out);
-        archivo << "digraph G { rankdir = LR; " << std::endl;
+        archivo << "digraph G { rankdir=LR; node [shape=oval];" << std::endl;
 
         Avion nodoDato;
         Nodo *actual = primero;
+        int nodeCount = 0;
         do
         {
             nodoDato = actual->getDato();
-            archivo << nodoDato.vuelo; // Escribe el número de vuelo
-            archivo << " -> ";
+            archivo << "node" << nodeCount << " [label=\"" << nodoDato.vuelo << "\"];" << std::endl; // Escribe el número de vuelo
             actual = actual->getSiguiente();
-            if (actual == primero)
-            {
-                archivo << actual->getDato().vuelo; // Escribe el número de vuelo
-            }
-
+            nodeCount++;
         } while (actual != primero);
 
-        archivo << "; }";
+        actual = primero;
+        int currentNode = 0;
+        do
+        {
+            int nextNode = (currentNode + 1) % nodeCount;
+            archivo << "node" << currentNode << " -> node" << nextNode << ";" << std::endl;
+            archivo << "node" << nextNode << " -> node" << currentNode << ";" << std::endl;
+            actual = actual->getSiguiente();
+            currentNode++;
+        } while (actual != primero);
+
+        archivo << " }";
         archivo.close();
         system("dot -Tpng grafica_LC_Disponible.dot -o grafica_LC_Disponible.png");
         system("start grafica_LC_Disponible.png");

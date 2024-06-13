@@ -1,2 +1,11 @@
-digraph G { rankdir = LR; 
-A100 -> A102 -> A104 -> A100; }
+digraph G { rankdir=LR; node [shape=oval];
+node0 [label="A100"];
+node1 [label="A102"];
+node2 [label="A104"];
+node0 -> node1;
+node1 -> node0;
+node1 -> node2;
+node2 -> node1;
+node2 -> node0;
+node0 -> node2;
+ }
