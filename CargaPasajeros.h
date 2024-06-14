@@ -28,6 +28,9 @@ public:
     void addPasajero(const Pasajero& pasajero);
     Pasajero deletePasajero();
     void reportesVis();
+    static void reportesVueloNormal();
+    static void reportesVueloAsiento();
+    static void reportesVueloNum();
     bool estaVacia();
 private:
     MiVector<Pasajero> pasajeros;

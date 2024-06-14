@@ -53,7 +53,7 @@ void CargaPasajeros::cargarDesdeArchivo(std::string nombre_archivo) {
         addPasajero(pasajero);
     }
 
-    list.ordenarPorAsiento();
+    //list.ordenarPorAsiento();
     //list.ordenarPorVuelo();
     list.ReporteList();
 
@@ -109,4 +109,18 @@ bool CargaPasajeros::estaVacia() {
 
 void CargaPasajeros::reportesVis() {
     colapas.reporte();
+}
+
+void CargaPasajeros::reportesVueloNormal() {
+    list.ReporteList();
+}
+
+void CargaPasajeros::reportesVueloAsiento() {
+    list.ordenarPorAsiento();
+    list.ReporteList();
+}
+
+void CargaPasajeros::reportesVueloNum() {
+    list.ordenarPorVuelo();
+    list.ReporteList();
 }
