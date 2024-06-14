@@ -34,7 +34,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 32,
+				"line" : 33,
 				"parent" : 0
 			}
 		]
@@ -139,7 +139,8 @@
 				13,
 				14,
 				15,
-				16
+				16,
+				17
 			]
 		}
 	],
@@ -232,6 +233,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "PilaEquipaje.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "ListaED.h",
 			"sourceGroupIndex" : 1
 		}
 	],

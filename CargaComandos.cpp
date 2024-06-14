@@ -26,6 +26,8 @@ void CargaComandos::LeerComandos() {
         if(linea == "IngresoEquipajes;") {
                 Pasajero pasajero = cargaPasajeros.deletePasajero();
                 std::cout << "Salio de la cola: "<< pasajero.nombre << std::endl;
+                listaPasajeros.insertarFinal(pasajero);
+                std::cout << "Entro en la lista: "<< pasajero.nombre << std::endl;
             if(pasajero.equipaje_facturado !=0) {
                 pilaPasajeros.push(pasajero);
                 std::cout << "Entro a la pila: "<< pasajero.equipaje_facturado << std::endl;
@@ -33,6 +35,7 @@ void CargaComandos::LeerComandos() {
             }
         }
     }
+    listaPasajeros.ReporteLD();
     pilaPasajeros.toGraphviz();
     cargaPasajeros.reportesVis();
     std::cout << " " << std::endl;

@@ -28,5 +28,6 @@ add_executable(202109705_EDD_Practica main.cpp
         ListaPas.h
         nodoList.h
         PilaEquipaje.h
+        ListaED.h
 )
 target_link_libraries(202109705_EDD_Practica PRIVATE nlohmann_json::nlohmann_json)

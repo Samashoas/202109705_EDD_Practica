@@ -1,0 +1,10 @@
+digraph G {
+  rankdir=LR;
+  node0 [label="Nombre: John Doe, Nacionalidad: Estados Unidos, Numero de Pasaporte: P12345678, Vuelo: A100, Asiento: 12, Destino: New York, Origen: Los Angeles, Equipaje Facturado: 2"];
+  node1 [label="Nombre: Jane Smith, Nacionalidad: Reino Unido, Numero de Pasaporte: P98765432, Vuelo: A200, Asiento: 5, Destino: Londres, Origen: Paris, Equipaje Facturado: 1"];
+  node2 [label="Nombre: Carlos Rodríguez, Nacionalidad: Mexico, Numero de Pasaporte: P45678901, Vuelo: A900, Asiento: 23, Destino: Ciudad de Mexico, Origen: Miami, Equipaje Facturado: 0"];
+  node0 -> node1;
+  node1 -> node0;
+  node1 -> node2;
+  node2 -> node1;
+}

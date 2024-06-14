@@ -6,6 +6,7 @@
 #define CARGACOMANDOS_H
 #include "CargaPasajeros.h"
 #include "PilaEquipaje.h"
+#include "ListaED.h"
 
 class CargaComandos {
 public:
@@ -14,6 +15,7 @@ public:
     void LeerComandos();
 
 private:
+    ListaDoble<Pasajero> listaPasajeros;
     CargaPasajeros& cargaPasajeros;
 };
 
