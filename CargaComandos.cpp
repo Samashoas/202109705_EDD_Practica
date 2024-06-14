@@ -35,10 +35,13 @@ void CargaComandos::LeerComandos() {
             }
         }
     }
-    std::cout << "Reporte normal: " << std::endl;
+    std::cout << "Reporte normal creando... " << std::endl;
     listaPasajeros.ReporteLD(); //reporte normal
-    std::cout << "Reporte ordenado: " << std::endl;
+    std::cout << "Reporte ordenado creando... " << std::endl;
     listaPasajeros.ordenarPorVuelo(); // ordenar la lista
+    listaPasajeros.ReporteLD(); // reporte ordenado
+    std::cout << "Reporte ordenado por asiento: " << std::endl;
+    listaPasajeros.ordenarPorAsiento(); // ordenar la lista por asiento
     listaPasajeros.ReporteLD(); // reporte ordenado
     pilaPasajeros.toGraphviz();
     cargaPasajeros.reportesVis();
