@@ -32,6 +32,7 @@ public:
         return size;
     }
 
+
 private:
     size_t capacidad;
     size_t size;

@@ -26,7 +26,9 @@ public:
     void cargarDesdeArchivo(std::string nombre_archivo);
     static void OpcionesPasajeros();
     void addPasajero(const Pasajero& pasajero);
-
+    Pasajero deletePasajero();
+    void reportesVis();
+    bool estaVacia();
 private:
     MiVector<Pasajero> pasajeros;
 };

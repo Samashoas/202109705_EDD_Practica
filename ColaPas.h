@@ -6,6 +6,7 @@
 #define COLAPAS_H
 #include "nodoPas.h"
 
+
 class Cola {
 private:
     NodoPas * frente;
@@ -43,6 +44,7 @@ public:
             return frente->dato;
         } else {
             std::cout << "La cola esta vacia" << std::endl;
+            return Pasajero(); // Devuelve un pasajero vacío si la cola está vacía
         }
     }
 
@@ -95,8 +97,17 @@ public:
         file.close();
 
         // Call Graphviz to generate the image
-        system("dot -Tpng ColaPasajeros.dot -o ColaPasajeros.png");
-        system("start ColaPasajeros.png");
+        int result = system("dot -Tpng ColaPasajeros.dot -o ColaPasajeros.png");
+        if (result == -1) {
+            std::cerr << "Failed to execute command: dot -Tpng ColaPasajeros.dot -o ColaPasajeros.png" << std::endl;
+            return;
+        }
+
+        result = system("start ColaPasajeros.png");
+        if (result == -1) {
+            std::cerr << "Failed to execute command: start ColaPasajeros.png" << std::endl;
+            return;
+        }
     }
 
     bool estaVacia() {

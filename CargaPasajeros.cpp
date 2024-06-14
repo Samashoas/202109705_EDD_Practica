@@ -17,6 +17,8 @@ CargaPasajeros::~CargaPasajeros() {
     // Destructor implementation
 }
 
+Cola colapas;
+
 void CargaPasajeros::cargarDesdeArchivo(std::string nombre_archivo) {
     std::ifstream archivo(nombre_archivo);
     if(!archivo.is_open()){
@@ -26,7 +28,7 @@ void CargaPasajeros::cargarDesdeArchivo(std::string nombre_archivo) {
 
     json j;
     archivo >> j;
-    Cola colapas;
+
 
     for (const auto& item : j) {
         Pasajero pasajero;
@@ -75,4 +77,24 @@ void CargaPasajeros::OpcionesPasajeros() {
 
 void CargaPasajeros::addPasajero(const Pasajero& pasajero) {
     pasajeros.push_back(pasajero);
+}
+
+
+Pasajero CargaPasajeros::deletePasajero() {
+    if (!colapas.estaVacia()) {
+        Pasajero pasajero = colapas.obtenerFrente();
+        colapas.deque();
+        return pasajero;
+    } else {
+        std::cout << "No hay pasajeros en la cola." << std::endl;
+        return Pasajero(); // Devuelve un pasajero vacío si la cola está vacía
+    }
+}
+
+bool CargaPasajeros::estaVacia() {
+    return colapas.estaVacia();
+}
+
+void CargaPasajeros::reportesVis() {
+    colapas.reporte();
 }
