@@ -24,10 +24,10 @@ void CargaComandos::LeerComandos() {
     while (std::getline(archivo, linea)) {
         std::cout << linea << std::endl;
         if(linea == "IngresoEquipajes;") {
-                Pasajero pasajero = cargaPasajeros.deletePasajero();
-                std::cout << "Salio de la cola: "<< pasajero.nombre << std::endl;
-                listaPasajeros.insertarFinal(pasajero);
-                std::cout << "Entro en la lista: "<< pasajero.nombre << std::endl;
+            Pasajero pasajero = cargaPasajeros.deletePasajero();
+            std::cout << "Salio de la cola: "<< pasajero.nombre << std::endl;
+            listaPasajeros.insertarFinal(pasajero);
+            std::cout << "Entro en la lista: "<< pasajero.nombre << std::endl;
             if(pasajero.equipaje_facturado !=0) {
                 pilaPasajeros.push(pasajero);
                 std::cout << "Entro a la pila: "<< pasajero.equipaje_facturado << std::endl;
@@ -35,7 +35,11 @@ void CargaComandos::LeerComandos() {
             }
         }
     }
-    listaPasajeros.ReporteLD();
+    std::cout << "Reporte normal: " << std::endl;
+    listaPasajeros.ReporteLD(); //reporte normal
+    std::cout << "Reporte ordenado: " << std::endl;
+    listaPasajeros.ordenarPorVuelo(); // ordenar la lista
+    listaPasajeros.ReporteLD(); // reporte ordenado
     pilaPasajeros.toGraphviz();
     cargaPasajeros.reportesVis();
     std::cout << " " << std::endl;

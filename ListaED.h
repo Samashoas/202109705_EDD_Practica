@@ -46,6 +46,33 @@ public:
         }
     }
 
+    void ordenarPorVuelo() {
+        if (cabeza == nullptr || cabeza->siguiente == nullptr) {
+            return;  // La lista está vacía o solo tiene un elemento, por lo que ya está ordenada
+        }
+
+        Nodo<T>* i = cabeza->siguiente;
+        while (i != nullptr) {
+            T dato = i->dato;
+            Nodo<T>* j = i->anterior;
+
+            // Mover los elementos de la lista que son mayores que 'dato' una posición adelante
+            while (j != nullptr && j->dato.vuelo > dato.vuelo) {
+                j->siguiente->dato = j->dato;
+                j = j->anterior;
+            }
+
+            // Insertar 'dato' en la posición correcta
+            if (j == nullptr) {
+                cabeza->dato = dato;
+            } else {
+                j->siguiente->dato = dato;
+            }
+
+            i = i->siguiente;
+        }
+    }
+
     void eliminarInicio() {
         if (cabeza != nullptr) {
             Nodo<T>* nodoEliminado = cabeza;
