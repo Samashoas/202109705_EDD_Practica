@@ -5,6 +5,7 @@
 #include "CargaComandos.h"
 #include <fstream>
 #include <iostream>
+#include "PilaEquipaje.h"
 
 CargaComandos::CargaComandos(CargaPasajeros& cargaPasajeros) : cargaPasajeros(cargaPasajeros) {}
 
@@ -25,9 +26,14 @@ void CargaComandos::LeerComandos() {
         if(linea == "IngresoEquipajes;") {
                 Pasajero pasajero = cargaPasajeros.deletePasajero();
                 std::cout << "Salio de la cola: "<< pasajero.nombre << std::endl;
+            if(pasajero.equipaje_facturado !=0) {
+                pilaPasajeros.push(pasajero);
+                std::cout << "Entro a la pila: "<< pasajero.equipaje_facturado << std::endl;
                 std::cout << " " << std::endl;
+            }
         }
     }
+    pilaPasajeros.toGraphviz();
     cargaPasajeros.reportesVis();
     std::cout << " " << std::endl;
 }

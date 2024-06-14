@@ -8,6 +8,7 @@
 #include <nlohmann/json.hpp>
 #include "MiVector.h"
 
+
 struct Pasajero {
     std::string nombre;
     std::string nacionalidad;
@@ -18,6 +19,8 @@ struct Pasajero {
     std::string origen;
     int equipaje_facturado;
 };
+
+std::ostream& operator<<(std::ostream& os, const Pasajero& pasajero);
 
 class CargaPasajeros {
 public:

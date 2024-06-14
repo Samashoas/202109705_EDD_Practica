@@ -124,3 +124,11 @@ void CargaPasajeros::reportesVueloNum() {
     list.ordenarPorVuelo();
     list.ReporteList();
 }
+
+std::ostream& operator<<(std::ostream& os, const Pasajero& pasajero) {
+    os << "Nombre: " << pasajero.nombre << ", Nacionalidad: " << pasajero.nacionalidad
+       << ", Numero de Pasaporte: " << pasajero.numero_de_pasaporte << ", Vuelo: " << pasajero.vuelo
+       << ", Asiento: " << pasajero.asiento << ", Destino: " << pasajero.destino
+       << ", Origen: " << pasajero.origen << ", Equipaje Facturado: " << pasajero.equipaje_facturado;
+    return os;
+}

@@ -5,9 +5,11 @@
 #ifndef CARGACOMANDOS_H
 #define CARGACOMANDOS_H
 #include "CargaPasajeros.h"
+#include "PilaEquipaje.h"
 
 class CargaComandos {
 public:
+    Pila<Pasajero> pilaPasajeros;
     CargaComandos(CargaPasajeros& cargaPasajeros);
     void LeerComandos();
 
