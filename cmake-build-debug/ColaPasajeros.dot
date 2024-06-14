@@ -2,6 +2,39 @@ digraph G {
 rankdir=LR;
 node [shape = none];
 node0 [label = <<table border="0" cellborder="1" cellspacing="0">
+<tr><td>Nombre:</td><td>John Doe</td></tr>
+<tr><td>Nacionalidad:</td><td>Estados Unidos</td></tr>
+<tr><td>Num. de pasaporte:</td><td>P12345678</td></tr>
+<tr><td>Vuelo:</td><td>A100</td></tr>
+<tr><td>Asiento:</td><td>12</td></tr>
+<tr><td>Destino:</td><td>New York</td></tr>
+<tr><td>Origen:</td><td>Los Angeles</td></tr>
+<tr><td>Equipaje Fac.:</td><td>2</td></tr>
+</table>>];
+"node1" -> "node0";
+node1 [label = <<table border="0" cellborder="1" cellspacing="0">
+<tr><td>Nombre:</td><td>Jane Smith</td></tr>
+<tr><td>Nacionalidad:</td><td>Reino Unido</td></tr>
+<tr><td>Num. de pasaporte:</td><td>P98765432</td></tr>
+<tr><td>Vuelo:</td><td>A200</td></tr>
+<tr><td>Asiento:</td><td>5</td></tr>
+<tr><td>Destino:</td><td>Londres</td></tr>
+<tr><td>Origen:</td><td>Paris</td></tr>
+<tr><td>Equipaje Fac.:</td><td>1</td></tr>
+</table>>];
+"node2" -> "node1";
+node2 [label = <<table border="0" cellborder="1" cellspacing="0">
+<tr><td>Nombre:</td><td>Carlos Rodríguez</td></tr>
+<tr><td>Nacionalidad:</td><td>Mexico</td></tr>
+<tr><td>Num. de pasaporte:</td><td>P45678901</td></tr>
+<tr><td>Vuelo:</td><td>A900</td></tr>
+<tr><td>Asiento:</td><td>23</td></tr>
+<tr><td>Destino:</td><td>Ciudad de Mexico</td></tr>
+<tr><td>Origen:</td><td>Miami</td></tr>
+<tr><td>Equipaje Fac.:</td><td>0</td></tr>
+</table>>];
+"node3" -> "node2";
+node3 [label = <<table border="0" cellborder="1" cellspacing="0">
 <tr><td>Nombre:</td><td>Liu Wei</td></tr>
 <tr><td>Nacionalidad:</td><td>China</td></tr>
 <tr><td>Num. de pasaporte:</td><td>P23456789</td></tr>
@@ -11,8 +44,8 @@ node0 [label = <<table border="0" cellborder="1" cellspacing="0">
 <tr><td>Origen:</td><td>San Francisco</td></tr>
 <tr><td>Equipaje Fac.:</td><td>1</td></tr>
 </table>>];
-"node1" -> "node0";
-node1 [label = <<table border="0" cellborder="1" cellspacing="0">
+"node4" -> "node3";
+node4 [label = <<table border="0" cellborder="1" cellspacing="0">
 <tr><td>Nombre:</td><td>Ahmed Al-Farsi</td></tr>
 <tr><td>Nacionalidad:</td><td>Emiratos Arabes Unidos</td></tr>
 <tr><td>Num. de pasaporte:</td><td>P34567890</td></tr>

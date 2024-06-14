@@ -19,6 +19,10 @@ void opcion3() {
     cargaComandos.LeerComandos();
 }
 
+void opcion4() {
+    std::cout << "Opcion 4" << std::endl;
+}
+
 int main() {
     int opcion;
     bool salir = false;
@@ -46,7 +50,7 @@ int main() {
                 opcion3();
             break;
             case 4:
-                cout << "Opcion 4" << endl;
+                opcion4();
             break;
             case 5:
                 cout << "Opcion 5" << endl;

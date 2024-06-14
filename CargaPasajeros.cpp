@@ -6,6 +6,7 @@
 #include <fstream>
 #include <iostream>
 #include "ColaPas.h"
+#include "ListaPas.h"
 
 using nlohmann::json;
 
@@ -18,6 +19,7 @@ CargaPasajeros::~CargaPasajeros() {
 }
 
 Cola colapas;
+ListaSimple list;
 
 void CargaPasajeros::cargarDesdeArchivo(std::string nombre_archivo) {
     std::ifstream archivo(nombre_archivo);
@@ -41,11 +43,21 @@ void CargaPasajeros::cargarDesdeArchivo(std::string nombre_archivo) {
         pasajero.origen = item["origen"];
         pasajero.equipaje_facturado = item["equipaje_facturado"];
 
+
+        list.insertarInicio(pasajero);
+        list.visualizarLista();
+
         colapas.enqueue(pasajero);
         colapas.visualizarPasajero(pasajero);
         std::cout << "Pasajero ingresado a la cola" << std::endl;
         addPasajero(pasajero);
     }
+
+    list.ordenarPorAsiento();
+    //list.ordenarPorVuelo();
+    list.ReporteList();
+
+
     colapas.reporte();
     std::cout << " " << std::endl;
     std::cout << "*********************************" << std::endl;

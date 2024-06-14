@@ -1,0 +1,13 @@
+digraph G {
+rankdir=LR;
+node [shape=record];
+node0 [label="{<data> Ahmed Al-Farsi | <next> }"];
+node0:next:c -> node1:data;
+node1 [label="{<data> Jane Smith | <next> }"];
+node1:next:c -> node2:data;
+node2 [label="{<data> Liu Wei | <next> }"];
+node2:next:c -> node3:data;
+node3 [label="{<data> John Doe | <next> }"];
+node3:next:c -> node4:data;
+node4 [label="{<data> Carlos Rodríguez | <next> }"];
+}
